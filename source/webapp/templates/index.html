@@ -5,6 +5,10 @@
 {% endblock %}
 
 {% block content %}
+{% include 'partial/simple_search.html' %}
+{% if is_paginated %}
+        {% include 'partial/pagination.html' %}
+    {% endif%}
     {% for record in records %}
     <div class="wrapper">
         <h4>Author - {{ record.author }}</h2>
@@ -16,7 +20,9 @@
         <p><a href="{% url 'delete' task.pk %}">Delete task</a></p> {% endcomment %}
     </div>
     {% endfor %}
+    
 {% endblock%}
+
 {% block link %}
     {% comment %} <a href="{% url 'task_creation' %}">Add task</a> {% endcomment %}
 {% endblock%}
