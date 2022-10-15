@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>Tasks</h1>
+    
+{% endblock %}
+
+{% block content %}
+    {% for task in tasks %}
+    <div class="wrapper">
+        <h4>Title - {{ task.summary }}</h2>
+        <p>Task id - {{ task.id }}</p>
+        <p>Status - {{ task.status }}</p>
+        {% comment %} <p>Status - {{ task.type }}</p> {% endcomment %}
+        <p><a href="{% url 'task_render' task.pk %}">View detail</a></p>
+        <p><a href="{% url 'task_edit' task.pk %}">Edit task</a></p>
+        <p><a href="{% url 'delete' task.pk %}">Delete task</a></p>
+    </div>
+    {% endfor %}
+{% endblock%}
+{% block link %}
+    <a href="{% url 'task_creation' %}">Add task</a>
