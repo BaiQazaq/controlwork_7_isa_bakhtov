@@ -14,9 +14,9 @@
         <h4>Author - {{ record.author }}</h2>
         <p>Email - {{ record.email }}</p>
         <p>Text - {{ record.text }}</p>
-        {% comment %} <p>Status - {{ task.type }}</p> {% endcomment %}
+        <p><a href="{% url 'record_edit' record.pk %}">Edit record</a></p>
         {% comment %} <p><a href="{% url 'task_render' task.pk %}">View detail</a></p>
-        <p><a href="{% url 'task_edit' task.pk %}">Edit task</a></p>
+        
         <p><a href="{% url 'delete' task.pk %}">Delete task</a></p> {% endcomment %}
     </div>
     {% endfor %}

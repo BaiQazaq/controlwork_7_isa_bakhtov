@@ -12,7 +12,7 @@ class IndexView(ListView):
     ordering = ('-created_at',)
     # extra_context = {'aaa': 'bbb'}
     queryset = Record.objects.exclude(status=StatusChoices.NOT_ACTIVE)
-    paginate_by = 2
+    paginate_by = 4
     paginate_orphans = 1
     
 

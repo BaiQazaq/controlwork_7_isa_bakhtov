@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}
+    Record edit
+{% endblock%}
+
+{% block content %}
+    <form action=""{% url 'record_edit' record.pk %}"" method="POST">
+        <div class="form">
+            {% include 'partial/record_form.html' with button_text='Edit'%}
+        </div>
+    </form>
+{% endblock %}
