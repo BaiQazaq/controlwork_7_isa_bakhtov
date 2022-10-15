@@ -10,9 +10,9 @@ class StatusChoices(TextChoices):
     
     
 class Record(models.Model):
-    author = models.CharField(verbose_name='Автор', max_length=100, null=False, blank=False, default="No name")
+    author = models.CharField(verbose_name='Автор', max_length=50, null=False, blank=False, default="No name")
     email = models.EmailField(verbose_name = 'Почта', max_length=256, null=False, blank=False)
-    text = models.TextField(verbose_name='Текст', max_length=3000, null=False, blank=False)
+    text = models.TextField(verbose_name='Текст', max_length=2000, null=False, blank=False)
     status = models.CharField(verbose_name='Статус', choices=StatusChoices.choices, max_length=100, default=StatusChoices.ACTIVE)
     is_deleted = models.BooleanField(verbose_name="Удалено", default=False, null=False)
     created_at = models.DateTimeField(verbose_name='Дата создания', auto_now_add=True)
