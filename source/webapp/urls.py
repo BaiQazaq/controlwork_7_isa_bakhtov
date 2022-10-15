@@ -2,10 +2,11 @@ from django.urls import path
 
 
 from webapp.views.base import IndexView
-#from webapp.views.record import RecordView, RecordUpdateView, RecordCreate, RecordleDeleteView
+from webapp.views.record_create_view import RecordCreate #, RecordleDeleteView,  RecordView, RecordUpdateView,
 
 urlpatterns = [
     path("", IndexView.as_view(), name='index'),
+    path("record/add/", RecordCreate.as_view(), name = 'record_add'),
     
 ]
 
