@@ -10,3 +10,7 @@
         </div>
     </form>
 {% endblock %}
+{% block link %}
+    <a href="{% url 'index' %}">Main page</a>
+    <a href="{% url 'record_add' %}">Add record</a>
+{% endblock%}

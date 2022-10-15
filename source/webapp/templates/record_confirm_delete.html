@@ -1,0 +1,21 @@
+{% extends 'base.html'%}
+
+{% block title %}
+  Article - {{ record.pk }}
+{% endblock %}
+
+{% block link %}
+    <a href="{% url 'index' %}">Main page</a>
+    <a href="{% url 'record_add' %}">Add record</a>
+{% endblock%}
+
+{% block content %}
+<h1>Do you want delete the record?</h1>
+  <p>Author {{ record.author }}</p>
+  <p>Text {{ record.text }}</p>
+<form action="{% url 'confirm_delete' record.pk %}" method='post'>
+    {% csrf_token %}
+    <input type="submit" value="Delete">
+    <a href="{% url 'index' %}">Cancel</a>
+</form>
+{% endblock%}
